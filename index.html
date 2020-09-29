@@ -26,31 +26,31 @@
 
     function singleRound(playerSelection, computerSelection) {
         if(playerSelection == 'rock' && computerSelection == 'rock') {
-            console.log('It is a tie');
+            alert('It is a tie');
         } else if(playerSelection == 'rock' && computerSelection == 'scissors') {
-            console.log('One point for Grifindor');
+            alert('One point for Grifindor');
             playerPlus++;
         } else if(playerSelection == 'rock' && computerSelection == 'paper') {
-            console.log('Good one for the machine');
+            alert('Good one for the machine');
             computerPlus++;
         } else if(playerSelection == 'scissors' && computerSelection == 'rock') {
-            console.log('The machine knows');
+            alert('The machine knows');
             computerPlus++;
         } else if(playerSelection == 'scissors' && computerSelection == 'paper') {
-            console.log('Yujuuu lucky you!');
+            alert('Yujuuu lucky you!');
             playerPlus++;
         } else if(playerSelection == 'scissors' && computerSelection == 'scissors') {
-            console.log('It is a tie');
+            alert('It is a tie');
         } else if(playerSelection == 'paper' && computerSelection == 'rock') {
-            console.log('Good job guessing ;)');
+            alert('Good job guessing ;)');
             playerPlus++;
         } else if(playerSelection == 'paper' && computerSelection == 'paper') {
-            console.log('Tie, tie');
+            alert('Tie, tie');
         } else if(playerSelection == 'paper' && computerSelection == 'scissors') {
-            console.log('Point for the machine world');
+            alert('Point for the machine world');
             computerPlus++;
         } else {
-            console.log('Not valid');
+            alert('Not valid');
         }
     };
 
