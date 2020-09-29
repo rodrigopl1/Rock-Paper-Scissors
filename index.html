@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock paper scissors</title>
+</head>
+<body>
+    <script>
+    const playerSelection;
+    const playerChoice;
+    const playerPlus = 0;
+    const computerSelection;
+    const computerChoice;
+    const computerPlus = 0;
+
+
+    function computerPlay() {
+        const choose = ['rock', 'paper', 'scissors'];
+        computerChoice = choose[Math.floor(Math.random() * choose.length)];
+        return computerChoice;
+        }
+
+    function playerPlay() {
+        playerChoice = prompt('Rock, paper or scissors? Only 5 rounds');
+        playerChoice = playerChoice.toLowerCase();
+    }
+
+    function singleRound(playerSelection, computerSelection) {
+        if(playerSelection == 'rock' && computerSelection == 'rock') {
+            console.log('It is a tie');
+        } else if(playerSelection == 'rock' && computerSelection == 'scissors') {
+            console.log('One point for Grifindor');
+            playerPlus++;
+        } else if(playerSelection == 'rock' && computerSelection == 'paper') {
+            console.log('Good one for the machine');
+            computerPlus++;
+        } else if(playerSelection == 'scissors' && computerSelection == 'rock') {
+            console.log('The machine knows');
+            computerPlus++;
+        } else if(playerSelection == 'scissors' && computerSelection == 'paper') {
+            console.log('Yujuuu lucky you!');
+            playerPlus++;
+        } else if(playerSelection == 'scissors' && computerSelection == 'scissors') {
+            console.log('It is a tie');
+        } else if(playerSelection == 'paper' && computerSelection == 'rock') {
+            console.log('Good job guessing ;)');
+            playerPlus++;
+        } else if(playerSelection == 'paper' && computerSelection == 'paper') {
+            console.log('Tie, tie');
+        } else if(playerSelection == 'paper' && computerSelection == 'scissors') {
+            console.log('Point for the machine world');
+            computerPlus++;
+        } else {
+            console.log('Not valid');
+        }
+    };
+
+    function endGame() {
+        for(let i = 0; i < 5; i++) {
+            let result = singleRound(playerSelection(),computerSelection());
+            console.log(`Player result is: ${playerPlus} 
+            and the Computer result is: ${computerPlus}`);
+
+        if(playerPlus > computerPlus) {
+            console.log('You won!');
+        } else if(playerPlus == computerPlus) {
+            console.log('It is a tie');
+        } else {
+            console.log('Computers are clever');
+        }
+        }
+    };
+    endGame();
+    </script>
+</body>
+</html>
