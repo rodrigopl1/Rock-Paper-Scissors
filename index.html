@@ -6,23 +6,22 @@
 </head>
 <body>
     <script>
-    const playerSelection;
-    const playerChoice;
-    const playerPlus = 0;
-    const computerSelection;
-    const computerChoice;
-    const computerPlus = 0;
+    var playerPlus = 0;
+    var computerPlus = 0;
 
 
     function computerPlay() {
+		var computerChoice = "";	
         const choose = ['rock', 'paper', 'scissors'];
         computerChoice = choose[Math.floor(Math.random() * choose.length)];
         return computerChoice;
         }
 
     function playerPlay() {
+		var playerChoice = "";
         playerChoice = prompt('Rock, paper or scissors? Only 5 rounds');
         playerChoice = playerChoice.toLowerCase();
+		return playerChoice;
     }
 
     function singleRound(playerSelection, computerSelection) {
@@ -57,17 +56,16 @@
 
     function endGame() {
         for(let i = 0; i < 5; i++) {
-            let result = singleRound(playerSelection(),computerSelection());
-            console.log(`Player result is: ${playerPlus} 
-            and the Computer result is: ${computerPlus}`);
-
-        if(playerPlus > computerPlus) {
-            console.log('You won!');
-        } else if(playerPlus == computerPlus) {
-            console.log('It is a tie');
-        } else {
-            console.log('Computers are clever');
+            let result = singleRound(playerPlay(),computerPlay());
+            alert(`Player result is: ${playerPlus} 
+            and the Computer result is: ${computerPlus}`);        
         }
+		if(playerPlus > computerPlus) {
+            alert('You won!');
+        } else if(playerPlus == computerPlus) {
+            alert('It is a tie');
+        } else {
+            alert('Computers are clever');
         }
     };
     endGame();
