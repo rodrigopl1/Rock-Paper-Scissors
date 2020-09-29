@@ -1,2 +1,1 @@
-Classic Rock paper and scissors game 
-Just JS added
+JavaScript classic rock paper and scissors game.
